@@ -1,0 +1,100 @@
+<div class="body">
+    <h1><u>Contact Person List</u></h1>
+    <button type="button" id="custom-modal-1'" style="float: right" class="btn btn-outline-success" (click)="showAddProductForm()">Add User</button>
+
+    <table width="100%" class="styled-table">
+        <tr class="active-row">
+            <th>Name</th>
+            <th>Country</th>
+            <th>Phone</th>
+            <th>Company Id</th>
+
+        </tr>
+        <tr *ngFor="let datas of contactData;let i=index">
+            <td>{{datas.name}}</td>
+            <td>{{datas.country}}</td>
+            <td>{{datas.phone}}</td>
+            <td>{{datas.companyId}}</td>
+
+            <button type="button" class="btn btn-outline-danger" (click)="deleteRow(i)">Delete</button>
+            <button class="btn btn-outline-primary" (click)="showEditProductForm(datas)">Edit</button>
+
+        </tr>
+    </table>
+
+
+    <form *ngIf="userForm" (ngSubmit)="saveProduct(newUser)" #f="ngForm">
+        <h2>Add New User</h2>
+
+        <div>
+            <label>Name</label>
+
+            <input type="text" placeholder="Name" name="name" [(ngModel)]="newUser.name" pattern="[a-zA-Z][a-zA-Z ]{2,}" #name="ngModel" required>
+            <span *ngIf="!name.valid && name.touched"> please enter Name</span>
+        </div>
+
+        <div>
+            <label>Company Name</label>
+
+            <input type="text" placeholder="Company" name="Company" [(ngModel)]="newUser.country" #company="ngModel" required>
+            <span *ngIf="!company.valid && company.touched"> please enter Comapny Name</span>
+
+        </div>
+
+        <div>
+            <label>Phone</label>
+
+            <input type="tel" placeholder="Phone" name="Phone" pattern="[789][0-9]{9}" [(ngModel)]="newUser.phone" #phone="ngModel" required>
+            <span *ngIf="!phone.valid && phone.touched"> please enter Phone number</span>
+
+        </div>
+        <div>
+            <label>companyId</label>
+
+            <input type="number" placeholder="companyId" name="companyId" [(ngModel)]="newUser.companyId" #id="ngModel" required>
+            <span *ngIf="!id.valid && id.touched"> please enter Id</span>
+        </div>
+
+        <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+        <button (click)="cancelNewProduct()">Cancel</button>
+
+    </form>
+
+    <form *ngIf="editUserForm">
+        <h2>Edit Details</h2>
+
+
+        <div>
+            <label>Name</label>
+
+            <input type="text" placeholder="Name" name="name" [(ngModel)]="editedUser.name" pattern="[a-zA-Z][a-zA-Z ]{2,}" #name="ngModel" required>
+            <span *ngIf="!name.valid && name.touched"> please enter Name</span>
+
+        </div>
+
+        <div>
+            <label>Country Name</label>
+
+            <input type="text" placeholder="country" name="country" [(ngModel)]="editedUser.country" #company="ngModel" required>
+            <span *ngIf="!company.valid && company.touched"> please enter Comapny Name</span>
+        </div>
+
+        <div>
+            <label>Phone</label>
+
+            <input type="tel" placeholder="phone" name="phone" [(ngModel)]="editedUser.phone" maxlength="10" #phone="ngModel" required>
+            <span *ngIf="!phone.valid && phone.touched"> please enter Phone number</span>
+
+        </div>
+        <div>
+            <label>companyId</label>
+
+            <input type="text" placeholder="companyId" name="companyId" [(ngModel)]="editedUser.companyId" #id="ngModel" required>
+            <span *ngIf="!id.valid && id.touched"> please enter Id</span>
+        </div>
+
+        <button (click)="updateUser(editedUser)">Submit</button>
+        <button (click)="cancelEdits()">Cancel</button>
+
+    </form>
+</div>

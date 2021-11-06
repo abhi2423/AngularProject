@@ -1,0 +1,14 @@
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: inear-gradient(45deg, #49a09d, #5f2c82);
+    ;
+}
+
+#login {
+    float: right;
+    /*other style you may need*/
+}
+
+a.active {
+    background-color: linear-gradient( 45deg, #49a09d, #5f2c82);
+}

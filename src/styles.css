@@ -1,1 +1,67 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+
+/* @import "~@angular/material/prebuilt-themes/pink-bluegrey.css"; */
+
+
+/* @import "~@angular/material/prebuilt-themes/purple-green.css"; */
+
+html,
+.body {
+    margin: 0;
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+    font-family: sans-serif;
+    font-weight: 100;
+    width: 100%;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+table {
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+th {
+    text-align: left;
+}
+
+th {
+    background-color: #55608f;
+}
+
+h1 {
+    font-size: 26px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    color: deepskyblue;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
