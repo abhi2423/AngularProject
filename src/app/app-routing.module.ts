@@ -4,10 +4,12 @@ import { CompanydetailsComponent } from './companydetails/companydetails.compone
 import { LoginComponent } from './login/login.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', component: ContactListComponent , canActivate: [AuthGuard]},
+  { path: '', component: HomeComponent , canActivate: [AuthGuard]},
+  { path: 'contact', component: ContactListComponent },
   { path: 'company', component: CompanydetailsComponent },
 
 

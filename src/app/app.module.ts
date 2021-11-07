@@ -18,6 +18,7 @@ import { CompanydetailsComponent } from './companydetails/companydetails.compone
 import { HeaderComponent } from './header/header.component';
 import { UserListService } from './contact-list/user-list.service';
 import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -29,6 +30,7 @@ import { AuthGuard } from './auth.guard';
     ContactListComponent,
     CompanydetailsComponent,
     HeaderComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
