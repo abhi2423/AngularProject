@@ -18,16 +18,15 @@ export class ContactListComponent implements OnInit {
   newUser:any={};
   editUserForm: boolean = false;
   editedUser: any = {};
+  contactData:any;
+
   @ViewChild('f') addUserForm:NgForm;
+  
   constructor(private http: HttpClient,
     private userService:UserListService
     ) { 
-  }
-  // contactUrl="https://my-json-server.typicode.com/bokadedarvin/AngularDeveloperSample/contacts";
- 
-  contactData:any;
-
-
+  } 
+  
   ngOnInit() {
     this.userListData();
   }
@@ -55,10 +54,8 @@ userListData(){
   }
   saveProduct(user: Contacts) {
     if(this.isNewForm) {
-      // add new product
       this.userService.addUser(user);
     } 
-    console.log(this.addUserForm);
     this.userForm = false;
     this.userListData();
 
